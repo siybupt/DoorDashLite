@@ -1,0 +1,37 @@
+package com.siyu.doordashlite.entity
+
+data class Restaurant(
+
+    val id: Int,
+    val name: String,
+    val description: String,
+    val cover_img_url: String,
+    val address: Address,
+    val status: String,
+    val asap_time: Int,
+    val average_rating: Double,
+    val business: Business,
+    val business_id: Int,
+    val composite_score: Int,
+    val delivery_fee: Int,
+    val extra_sos_delivery_fee: Int,
+    val featured_category_description: Any,
+    val header_img_url: String,
+    val is_newly_added: Boolean,
+    val is_only_catering: Boolean,
+    val is_time_surging: Boolean,
+    val max_composite_score: Int,
+    val max_order_size: Int,
+    val menus: List<Menu>,
+    val merchant_promotions: List<Any>,
+    val number_of_ratings: Int,
+    val price_range: Int,
+    val promotion: Any,
+    val service_rate: Double,
+    val slug: String,
+    val status_type: String,
+    val tags: List<String>,
+    val url: String,
+    val yelp_rating: Double,
+    val yelp_review_count: Int
+)
