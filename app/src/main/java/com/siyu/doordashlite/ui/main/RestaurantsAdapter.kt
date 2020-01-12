@@ -10,7 +10,7 @@ import com.bumptech.glide.Glide
 import com.siyu.doordashlite.R
 import com.siyu.doordashlite.entity.Restaurant
 
-class RestaurantsAdapter() : RecyclerView.Adapter<RestaurantsAdapter.ViewHolder>() {
+class RestaurantsAdapter : RecyclerView.Adapter<RestaurantsAdapter.ViewHolder>() {
 
     private var restaurants = listOf<Restaurant>()
 
@@ -26,6 +26,8 @@ class RestaurantsAdapter() : RecyclerView.Adapter<RestaurantsAdapter.ViewHolder>
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val restaurant = restaurants[position]
         holder.restaurantName.text = restaurant.name
+        holder.restaurantDesc.text = restaurant.description
+        holder.restaurantStatus.text = restaurant.status
         Glide.with(holder.itemView.context)
             .load(restaurant.cover_img_url)
             .into(holder.thumbnail)
@@ -39,5 +41,7 @@ class RestaurantsAdapter() : RecyclerView.Adapter<RestaurantsAdapter.ViewHolder>
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var thumbnail: ImageView = itemView.findViewById(R.id.image_view_thumbnail)
         var restaurantName: TextView = itemView.findViewById(R.id.text_restaurant_name)
+        var restaurantDesc: TextView = itemView.findViewById(R.id.text_restaurant_desc)
+        var restaurantStatus: TextView = itemView.findViewById(R.id.text_restaurant_status)
     }
 }

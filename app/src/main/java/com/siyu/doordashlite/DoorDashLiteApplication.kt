@@ -7,7 +7,7 @@ import com.siyu.doordashlite.dagger.DaggerAppComponent
 
 class DoorDashLiteApplication : Application() {
 
-    lateinit var appComponent: AppComponent
+    private lateinit var appComponent: AppComponent
     override fun onCreate() {
         super.onCreate()
         appComponent = DaggerAppComponent

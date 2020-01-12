@@ -8,7 +8,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 @Module
-class AppModule(private val gifApp: DoorDashLiteApplication) {
+class AppModule(doordashApp: DoorDashLiteApplication) {
 
     companion object {
         const val BASE_URI = "https://api.doordash.com/v2/"

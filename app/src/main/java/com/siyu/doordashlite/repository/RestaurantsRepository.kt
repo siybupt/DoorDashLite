@@ -18,7 +18,7 @@ class RestaurantsRepository(application: Application) {
         const val testLat = 37.422740
         const val testLng = -122.139956
         const val testOffset = 0
-        const val testLimit = 50
+        const val testLimit = 500
     }
 
     @Inject
@@ -30,7 +30,8 @@ class RestaurantsRepository(application: Application) {
     }
 
     fun getGifData(): MutableLiveData<List<Restaurant>> {
-        restaurantsInterface.getNearbyRestaurants(testLat, testLng, testOffset, testLimit).enqueue(object: Callback<List<Restaurant>> {
+        restaurantsInterface.getNearbyRestaurants(testLat, testLng, testOffset, testLimit)
+            .enqueue(object: Callback<List<Restaurant>> {
             override fun onFailure(call: Call<List<Restaurant>>, t: Throwable) {
                 Log.e(TAG, "Error in get restaurant ${t.message}")
             }

@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">DoorDashLite</string>
+    <string name="main_screen_name">Discover</string>
     <string name="thumbnail">This shows restaurant logo.</string>
+    <string name="discover">Discover</string>
 </resources>

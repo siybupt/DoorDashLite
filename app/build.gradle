@@ -11,7 +11,7 @@ android {
     buildToolsVersion "29.0.1"
     defaultConfig {
         applicationId "com.siyu.doordashlite"
-        minSdkVersion 15
+        minSdkVersion 17
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -35,6 +35,15 @@ android {
 dependencies {
     def room_version = "2.2.3"
     def dagger_version = "2.23"
+    def androidx_test_runner_version = "1.2.0-alpha03"
+    def androidx_test_rules_version = "1.2.0-alpha03"
+    def androidx_test_monitor_version = "1.2.0-alpha03"
+    def androidx_test_ext_junit_version = "1.1.1-alpha03"
+    def androidx_test_ext_core_version = "1.2.0-alpha03"
+    def androidx_test_orchestrator_version = "1.2.0-alpha03"
+    def conditionwatcher_version = "0.2"
+    def espresso_version = '3.2.0-alpha03'
+
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "androidx.room:room-runtime:$room_version"
     annotationProcessor "androidx.room:room-compiler:$room_version"
@@ -50,6 +59,24 @@ dependencies {
     kapt "com.google.dagger:dagger-compiler:$dagger_version"
 
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    // AndroidJUnitRunner and JUnit Rules
+    androidTestImplementation "androidx.test:runner:$androidx_test_runner_version"
+    androidTestImplementation "androidx.test:rules:$androidx_test_rules_version"
+    androidTestImplementation "androidx.test:monitor:$androidx_test_monitor_version"
+    androidTestImplementation "androidx.test.ext:junit-ktx:$androidx_test_ext_junit_version"
+    androidTestImplementation "androidx.test:core-ktx:$androidx_test_ext_core_version"
+    androidTestUtil "androidx.test:orchestrator:$androidx_test_orchestrator_version"
+
+    //Dependencies for Espresso
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
+
+    // Espresso intents for checking launched intents
+    androidTestImplementation "androidx.test.espresso:espresso-intents:$espresso_version"
+
+    // Espresso-contrib for DatePicker, RecyclerView, Drawer actions, Accessibility checks, CountingIdlingResource
+    androidTestImplementation("androidx.test.espresso:espresso-contrib:$espresso_version")
+
+    // Conditionwatcher for synchronization with background jobs (used instead of Espresso-idling-ressource)
+    androidTestImplementation "com.azimolabs.conditionwatcher:conditionwatcher:$conditionwatcher_version"
+
 }
