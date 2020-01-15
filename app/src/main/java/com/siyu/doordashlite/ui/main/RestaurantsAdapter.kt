@@ -39,9 +39,9 @@ class RestaurantsAdapter : RecyclerView.Adapter<RestaurantsAdapter.ViewHolder>()
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var thumbnail: ImageView = itemView.findViewById(R.id.image_view_thumbnail)
-        var restaurantName: TextView = itemView.findViewById(R.id.text_restaurant_name)
-        var restaurantDesc: TextView = itemView.findViewById(R.id.text_restaurant_desc)
-        var restaurantStatus: TextView = itemView.findViewById(R.id.text_restaurant_status)
+        val thumbnail: ImageView = itemView.findViewById(R.id.image_view_thumbnail)
+        val restaurantName: TextView = itemView.findViewById(R.id.text_restaurant_name)
+        val restaurantDesc: TextView = itemView.findViewById(R.id.text_restaurant_desc)
+        val restaurantStatus: TextView = itemView.findViewById(R.id.text_restaurant_status)
     }
 }
